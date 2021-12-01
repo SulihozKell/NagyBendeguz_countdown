@@ -63,7 +63,7 @@ public class HelloController {
                     idoTimer.schedule(timerTask, 1, 1);
                 }
                 else {
-                    hatralevoIdoKiir.setText("A megadott időpont helytelen!");
+                    hatralevoIdoKiir.setText("Érvénytelen időpont!");
                 }
             }
             catch (Exception e) {
