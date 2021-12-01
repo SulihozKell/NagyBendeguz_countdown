@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.control.TextField?>
+
+<GridPane alignment="CENTER" xmlns:fx="http://javafx.com/fxml" minHeight="200.0" minWidth="200.0"
+          fx:controller="com.example.nagybendeguz_countdown.HelloController">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+    <rowConstraints>
+        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+    </rowConstraints>
+    <columnConstraints>
+        <ColumnConstraints maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+        <ColumnConstraints maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+        <ColumnConstraints />
+    </columnConstraints>
+    <children>
+        <TextField fx:id="datumBevitel" />
+        <Button fx:id="gombIndit" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#inditTimer" prefWidth="100.0" text="Indít" GridPane.columnIndex="1" />
+        <Label fx:id="hatralevoIdoKiir" alignment="CENTER" prefWidth="200.0" GridPane.rowIndex="1" GridPane.columnSpan="2" />
+    </children>
+</GridPane>
