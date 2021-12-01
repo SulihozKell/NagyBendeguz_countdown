@@ -51,7 +51,8 @@ public class HelloController {
                             int ora = datumIdo.toHoursPart();
                             int perc = datumIdo.toMinutesPart();
                             int masodperc = datumIdo.toSecondsPart();
-                            Platform.runLater(() -> hatralevoIdoKiir.setText(ev + " év " + honap + " hó " + nap + " nap " + ora + ":" + perc + ":" + masodperc));
+                            Platform.runLater(() -> hatralevoIdoKiir.setText(ev + " év " + honap + " hó " + nap +
+                                    " nap " + ora + ":" + perc + ":" + masodperc));
                             if (ev == 0 && honap == 0 && nap == 0 && ora == 0 && perc == 0 && masodperc == 0) {
                                 idoTimer.cancel();
                                 Platform.runLater(()->vegeTimer());

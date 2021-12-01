@@ -4,7 +4,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="CENTER" minHeight="200.0" minWidth="200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.2" fx:controller="com.example.nagybendeguz_countdown.HelloController">
+<GridPane alignment="CENTER" minHeight="200.0" minWidth="200.0" xmlns:fx="http://javafx.com/fxml/1"
+          xmlns="http://javafx.com/javafx/11.0.2" fx:controller="com.example.nagybendeguz_countdown.HelloController">
     <padding>
         <Insets bottom="10" left="10" right="10" top="10" />
     </padding>
@@ -19,7 +20,9 @@
     </columnConstraints>
     <children>
         <TextField fx:id="datumBevitel" stylesheets="@style.css" />
-        <Button fx:id="gombIndit" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#inditTimer" prefWidth="100.0" stylesheets="@style.css" text="Indít" GridPane.columnIndex="1" />
-        <Label fx:id="hatralevoIdoKiir" alignment="CENTER" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1" stylesheets="@style.css" />
+        <Button fx:id="gombIndit" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" onAction="#inditTimer"
+                prefWidth="100.0" stylesheets="@style.css" text="Indít" GridPane.columnIndex="1" />
+        <Label fx:id="hatralevoIdoKiir" alignment="CENTER" prefWidth="200.0" GridPane.columnSpan="2"
+               GridPane.rowIndex="1" stylesheets="@style.css" />
     </children>
 </GridPane>
