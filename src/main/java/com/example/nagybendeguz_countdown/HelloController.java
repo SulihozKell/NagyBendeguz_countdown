@@ -30,10 +30,10 @@ public class HelloController {
     @FXML
     public void inditTimer() {
         if (gombNyomas == 0) {
-            // HELYES DÁTUM PÉLDA -> 2021-12-01 23:00:00
+            // HELYES DÁTUM PÉLDA -> 2021.12.01 23:00:00
             String idoString = datumBevitel.getText();
             try {
-                LocalDateTime ido = LocalDateTime.parse(idoString, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+                LocalDateTime ido = LocalDateTime.parse(idoString, DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm:ss"));
                 Period datum = Period.between(LocalDateTime.now().toLocalDate(), ido.toLocalDate());
                 Duration datumIdo = Duration.between(LocalDateTime.now(), ido);
                 if (!datum.isNegative() && !datumIdo.isNegative()) {
