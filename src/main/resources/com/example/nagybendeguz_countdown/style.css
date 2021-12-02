@@ -1,0 +1,16 @@
+.button {
+    -fx-background-color: lightgrey;
+    -fx-background-radius: 0;
+    -fx-border-color:black;
+    -fx-border-width: 3;
+}
+.text-field {
+    -fx-background-radius:0;
+    -fx-border-color:black;
+    -fx-border-width: 3;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.label {
+    -fx-font-size: x-large;
+}

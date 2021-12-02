@@ -20,16 +20,16 @@ public class HelloController {
     @FXML
     private Label hatralevoIdoKiir;
     private Timer idoTimer;
-    private int gombNyomas;
+    private boolean gombNyomas;
 
     @FXML
     public void initialize() {
-        gombNyomas = 0;
+        gombNyomas = true;
     }
 
     @FXML
     public void inditTimer() {
-        if (gombNyomas == 0) {
+        if (gombNyomas) {
             // HELYES DÁTUM PÉLDA -> 2021.12.01 23:00:00
             String idoString = datumBevitel.getText();
             try {
@@ -37,7 +37,7 @@ public class HelloController {
                 Period datum = Period.between(LocalDateTime.now().toLocalDate(), ido.toLocalDate());
                 Duration datumIdo = Duration.between(LocalDateTime.now(), ido);
                 if (!datum.isNegative() && !datumIdo.isNegative()) {
-                    gombNyomas++;
+                    gombNyomas = false;
                     gombIndit.setText("-");
                     idoTimer = new Timer();
                     TimerTask timerTask = new TimerTask() {
@@ -51,12 +51,12 @@ public class HelloController {
                             int ora = datumIdo.toHoursPart();
                             int perc = datumIdo.toMinutesPart();
                             int masodperc = datumIdo.toSecondsPart();
-                            Platform.runLater(() -> hatralevoIdoKiir.setText(ev + " év " + honap + " hó " + nap +
-                                    " nap " + ora + ":" + perc + ":" + masodperc));
+                            Platform.runLater(() -> hatralevoIdoKiir.setText(String.format(
+                                    "%d év %d hó %d nap %02d:%02d:%02d", ev, honap, nap, ora, perc, masodperc)));
                             if (ev == 0 && honap == 0 && nap == 0 && ora == 0 && perc == 0 && masodperc == 0) {
                                 idoTimer.cancel();
-                                Platform.runLater(()->vegeTimer());
-                                gombNyomas = 0;
+                                Platform.runLater(()->vegeTimerFelugroAblak());
+                                gombNyomas = true;
                                 Platform.runLater(()->gombIndit.setText("Indít"));
                             }
                         }
@@ -73,8 +73,9 @@ public class HelloController {
         }
     }
 
-    public void vegeTimer() {
-        Alert felugroAblak = new Alert(Alert.AlertType.NONE, "Lejárt az Idő!", ButtonType.OK);
+    public void vegeTimerFelugroAblak() {
+        Alert felugroAblak = new Alert(Alert.AlertType.NONE, "Lejárt az idő!", ButtonType.OK);
+        felugroAblak.setTitle("Lejárt");
         felugroAblak.show();
     }
 }
